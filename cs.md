@@ -72,7 +72,7 @@ Example query:
 
 # Summary page
 
-![summary](assets/summary.png)
+![summary](assets/summarypage.png)
 
 - the **frontend** should have:
   - a heading with the title of the page
