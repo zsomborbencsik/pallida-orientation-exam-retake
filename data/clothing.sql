@@ -5,6 +5,7 @@ manufacturer VARCHAR(30),
 category VARCHAR(30),
 size VARCHAR(4),
 unit_price FLOAT,
+in_store INT,
 PRIMARY KEY (id));
 GO
 
