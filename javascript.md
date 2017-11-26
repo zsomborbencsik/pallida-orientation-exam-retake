@@ -8,7 +8,7 @@ Build a webshop that people can use to order some merchandise from the Greenfox 
 
 The main page should render an HTML displaying the full list of clothes(explained above)
 
-The table should be automatically rendred by the data returned from the `/storedata` endpoint.
+The table should be automatically rendred by the data returned from the `/warehouse` endpoint.
 
 ![main](assets/main2.png)
 
@@ -65,6 +65,8 @@ Return all rows in the `warehouse` SQL table:
  - Item is the value of the item_name column
  - The size query string parameter identifies the size of the item
  - The quantity query string parameter is used to check the availability of the item by the given amount
+
+In the `warehouse` database table the `in_store` column stores how many items are available.
 
 Return the following JSON if the quantity is larger than 3:
 
