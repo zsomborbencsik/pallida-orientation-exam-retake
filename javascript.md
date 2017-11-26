@@ -29,9 +29,12 @@ If the `/check` endpoint returns OK, then display a message under the heading th
 Add green background to the message if the cloths can be ordered and red if there were an error.
 
 ## Endpoints
-- you should create these endpoints:
 
-### GET `/storedata`
+You should create these endpoints:
+
+### GET `/warehouse`
+
+Return all rows in the `warehouse` SQL table:
 
 ```json
 {
@@ -58,8 +61,8 @@ Add green background to the message if the cloths can be ordered and red if ther
 }
 ```
 
-### GET `/price-check/:id?quantity=[integer]`
- - Where ID is the identifier of the cloth to order 
+### GET `/price-check/?size=s&quantity=[integer]`
+ - The size query string parameter identifies the size of the item
  - The quantity query string parameter is used to check the availability of the item by the given amount
 
 Return the following JSON if the quantity is larger than 3:
