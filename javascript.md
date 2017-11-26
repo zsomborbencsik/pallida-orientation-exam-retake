@@ -61,7 +61,8 @@ Return all rows in the `warehouse` SQL table:
 }
 ```
 
-### GET `/price-check/?size=s&quantity=[integer]`
+### GET `/price-check/?item=[string]&size=s&quantity=[integer]`
+ - Item is the value of the item_name column
  - The size query string parameter identifies the size of the item
  - The quantity query string parameter is used to check the availability of the item by the given amount
 
