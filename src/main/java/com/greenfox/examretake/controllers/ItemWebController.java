@@ -39,7 +39,7 @@ public class ItemWebController {
         for (int i = 0; i < quantity; i++) {
             tempList.add(itemService.findByNameandSize(itemName,size).get(0));
         }
-        this.userCart = new Cart("ok",tempList);
+        this.userCart = new Cart(tempList);
         model.addAttribute("price", cartService.calculateSubtotalPrice(userCart));
         model.addAttribute("itemSelected", this.userCart);
         model.addAttribute("quantity",this.userCart.getClothes().size());

@@ -37,3 +37,6 @@ CREATE A SCREENSHOT OF THE DATABASE YOU IMPORTED AND COMMIT IT TO THE REPO
  - [C#](cs.md)
  - [Java](java.md)
  - [JavaScript](javascript.md)
+ 
+ Question: Why would you declare your class as an abstract class?
+ Answer: Abstract classes and interfaces are required for the abstraction. They cannot be instantiated with a new, but are possible to be resolved to in inversion of control containers or via factory patterns.

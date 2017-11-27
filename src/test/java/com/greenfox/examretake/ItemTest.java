@@ -69,5 +69,4 @@ public class ItemTest {
                 .andExpect(content().contentType(contentType))
                 .andExpect(jsonPath("$.result", is(result)));
     }
-
 }

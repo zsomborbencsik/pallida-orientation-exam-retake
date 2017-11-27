@@ -1,26 +1,23 @@
 package com.greenfox.examretake.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
 
-    String result;
     List<Item> clothes;
 
-    public Cart(String result, List<Item> clothes) {
-        this.result = "ok";
+    public Cart(List<Item> clothes) {
         this.clothes = clothes;
     }
 
+    public void populateCart(int quantity, Item item) {
+        for (int i = 0; i < quantity; i++) {
+            this.clothes.add(item);
+        }
+    }
+
     public Cart() {
-    }
-
-    public String getResult() {
-        return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
     }
 
     public List<Item> getClothes() {
@@ -31,7 +28,4 @@ public class Cart {
         this.clothes = clothes;
     }
 
-/*    public void addToCart(Item item) {
-        this.clothes.add(item);
-    }*/
 }
