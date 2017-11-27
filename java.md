@@ -23,10 +23,10 @@ Build a webshop that people can use to order some merchandise from the Greenfox 
 ## Endpoints
 - you should create these endpoints:
 
-### GET `/shoppingplanner`
+### GET `/warehouse`
 - the endpoint should render an HTML displaying the full list of clothes(explained above)
 
-### POST `/shoppingplanner/summary`
+### POST `/warehouse/summary`
 - this endpoint should receive all the information of the selected item
 - this endpoint should render an other HTML after receiving the data, which should display the extract of the selected item in a table:
   - item name
@@ -36,12 +36,12 @@ Build a webshop that people can use to order some merchandise from the Greenfox 
   - amount
   - sub-total price of the item (based on nr. of selected item)
 
-### GET `/shoppingplanner/query`
+### GET `/warehouse/query`
 - this endpoint should return all the clothes which has higher/lower/equal price than the given parameter
 
 Example query:
 
-`http://localhost:8080/shoppingplanner/query?price=50&type=lower`
+`http://localhost:8080/warehouse/query?price=50&type=lower`
 
 - this should return a json with every cloth where the unit price is lower than 50
 
