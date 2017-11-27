@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>GFA Warehouse</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Item Name</th>
+        <th>Manufacturer</th>
+        <th>Category</th>
+        <th>Size</th>
+        <th>Price</th>
+    </tr>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.getItemName()}"></td>
+<!--        <td><a th:href="@{'/search/{brand}'(brand=${plate.getCarBrand()})}" th:text="${plate.getCarBrand()}"></a></td>-->
+        <td th:text="${item.getManufacturer()}"></td>
+        <td th:text="${item.getCategory()}"></td>
+        <td th:text="${item.getSize()}"></td>
+        <td th:text="${item.getUnitPrice()}"></td>
+<!--        <td><a th:href="@{'/{id}/edit'(id=${plate.getPlate()})}">Edit</a></td>-->
+    </tr>
+</table>
+
+</body>
+</html>
