@@ -16,8 +16,11 @@ public interface ItemRepository extends CrudRepository<Item, Long> {
     @Query(value = "SELECT DISTINCT size FROM warehouse", nativeQuery = true)
     List<String> getDistinctSizes();
 
-/*    @Query(value = "SELECT * FROM warehouse WHERE ( item_name = %?1% AND size = %?2% ) ", nativeQuery = true)
-    Item findByNameandSize(String itemName, String size);*/
+    @Query(value = "SELECT * FROM warehouse WHERE unit_price <= ?1 ", nativeQuery = true)
+    List<Item> findByPriceLower(double price);
+
+    @Query(value = "SELECT * FROM warehouse WHERE unit_price >= ?1 ", nativeQuery = true)
+    List<Item> findByPriceHigher(double price);
 
     List<Item> findItemByItemNameAndSize(String itemName, String size);
 }

@@ -34,20 +34,15 @@ public class ItemWebController {
     }
 
     @PostMapping("/warehouse/summary")
-    public String addToCart(@RequestParam String itemName, @RequestParam(required = false) String size,@RequestParam int quantity, Model model) {
+    public String addToCart(@RequestParam String itemName, @RequestParam String size,@RequestParam int quantity, Model model) {
         List<Item> tempList = new ArrayList<>();
         for (int i = 0; i < quantity; i++) {
             tempList.add(itemService.findByNameandSize(itemName,size).get(0));
         }
         this.userCart = new Cart("ok",tempList);
         model.addAttribute("price", cartService.calculateSubtotalPrice(userCart));
-        model.addAttribute("itemSelected", this.userCart.getClothes());
-        return "summary";
-    }
-
-    @PostMapping("/warehouse/summary")
-    public String summary(@ModelAttribute Cart cart, Model model) {
-        model.addAttribute("cart",cart);
+        model.addAttribute("itemSelected", this.userCart);
+        model.addAttribute("quantity",this.userCart.getClothes().size());
         return "summary";
     }
 

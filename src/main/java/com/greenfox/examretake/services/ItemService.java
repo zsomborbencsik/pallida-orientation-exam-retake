@@ -29,4 +29,16 @@ public class ItemService {
     public List<Item> findByNameandSize(String itemName, String size) {
         return itemRepository.findItemByItemNameAndSize(itemName,size);
     }
+
+
+
+    public List<Item> filter(String type, double price) {
+        if (type.equals("lower")) {
+            return itemRepository.findByPriceLower(price);
+        }
+        else if (type.equals("higher")) {
+            return itemRepository.findByPriceHigher(price);
+        }
+        return null;
+    }
 }

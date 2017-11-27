@@ -5,6 +5,24 @@
     <title>Summary</title>
 </head>
 <body>
+<h1>Summary</h1>
+
+<table>
+    <tr>
+        <th>Item Name</th>
+        <th>Manufacturer</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Subtotal Price</th>
+    </tr>
+    <tr th:each="item : ${itemSelected}">
+        <td th:text="${item.getClothes().get(0).getItemName()}"></td>
+        <td th:text="${item.getClothes().get(0).getManufacturer()}"></td>
+        <td th:text="${item.getClothes().get(0).getCategory()}"></td>
+        <td th:text="${quantity}"></td>
+        <td th:text="${price}"></td>
+    </tr>
+</table>
 
 </body>
 </html>
