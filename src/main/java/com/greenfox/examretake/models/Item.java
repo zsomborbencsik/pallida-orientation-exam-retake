@@ -8,7 +8,8 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
+    @Column(name = "id")
+    Long id;
     @Column(name = "item_name")
     String itemName;
     String manufacturer;

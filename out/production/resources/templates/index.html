@@ -5,6 +5,27 @@
     <title>GFA Warehouse</title>
 </head>
 <body>
+<h1>Green Fox Fashion Web Store</h1>
+
+<form action="/select" method="get">
+    <select name="itemName" >
+    <option th:each="item : ${distinctItem}" name="itemName" th:text="${item}"></option>
+    </select>
+    <select name="size" >
+        <option th:each="size : ${distinctSize}" name="size" th:text="${size}"></option>
+    </select>
+    <button type="submit" value="Submit">Add</button>
+</form>
+
+<p th:text="${check}"></p>
+<p th:text="${size}"></p>
+
+<!--<td><form action="#" th:action="@{/select}" th:object="${editedToDo}" method="post">
+    <select th:field="*{assignee}">
+
+    </select>
+</form>-->
+
 <table>
     <tr>
         <th>Item Name</th>
@@ -23,6 +44,10 @@
 <!--        <td><a th:href="@{'/{id}/edit'(id=${plate.getPlate()})}">Edit</a></td>-->
     </tr>
 </table>
+
+<tr th:each="item : ${distinctItem}">
+    <td th:text="${item}"></td>
+</tr>
 
 </body>
 </html>
