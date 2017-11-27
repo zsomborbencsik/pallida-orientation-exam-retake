@@ -26,4 +26,7 @@ public class ItemService {
     public List<String> getDistinctSizes() {
         return itemRepository.getDistinctSizes();
     }
+    public List<Item> findByNameandSize(String itemName, String size) {
+        return itemRepository.findItemByItemNameAndSize(itemName,size);
+    }
 }

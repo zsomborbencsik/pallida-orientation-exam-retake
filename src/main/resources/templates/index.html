@@ -9,11 +9,12 @@
 
 <form action="/select" method="get">
     <select name="itemName" >
-    <option th:each="item : ${distinctItem}" name="itemName" th:text="${item}"></option>
+    <option th:each="item : ${distinctItem}" th:text="${item}"></option>
     </select>
     <select name="size" >
-        <option th:each="size : ${distinctSize}" name="size" th:text="${size}"></option>
+        <option th:each="size : ${distinctSize}" th:text="${size}"></option>
     </select>
+    <input type="text" name="quantity"/>
     <button type="submit" value="Submit">Add</button>
 </form>
 
@@ -45,8 +46,18 @@
     </tr>
 </table>
 
-<tr th:each="item : ${distinctItem}">
+<!--<tr th:each="item : ${distinctItem}">
     <td th:text="${item}"></td>
+</tr>-->
+
+<tr th:each="item : ${itemSelected}">
+    <td th:text="${item.getItemName()}"></td>
+    <!--        <td><a th:href="@{'/search/{brand}'(brand=${plate.getCarBrand()})}" th:text="${plate.getCarBrand()}"></a></td>-->
+    <td th:text="${item.getManufacturer()}"></td>
+    <td th:text="${item.getCategory()}"></td>
+    <td th:text="${item.getSize()}"></td>
+    <td th:text="${item.getUnitPrice()}"></td>
+    <!--        <td><a th:href="@{'/{id}/edit'(id=${plate.getPlate()})}">Edit</a></td>-->
 </tr>
 
 </body>

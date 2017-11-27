@@ -8,7 +8,7 @@ public class Cart {
     List<Item> clothes;
 
     public Cart(String result, List<Item> clothes) {
-        this.result = result;
+        this.result = "ok";
         this.clothes = clothes;
     }
 
@@ -30,4 +30,8 @@ public class Cart {
     public void setClothes(List<Item> clothes) {
         this.clothes = clothes;
     }
+
+/*    public void addToCart(Item item) {
+        this.clothes.add(item);
+    }*/
 }
